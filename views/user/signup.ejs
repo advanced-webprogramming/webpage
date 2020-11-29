@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lnag="ko">
+  <head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="new_main.css">
+  </head>
+  <body>
+    <form action="/user/sign_up" method="post">
+        <!-- header -->
+        <div id="header">
+        <a href="웹주소" target="_blank"><img src="limeorange.jpg" id="logo"></a>
+        </div>
+        <!-- wrapper -->
+        <div id="wrapper">
+        <!-- content-->
+        <div id="content">
+
+            <!-- ID -->
+            <div>
+            <h3 class="join_title"><label for="id">아이디</label></h3>
+            <span class="box int_id">
+                <input type="text" name="userId" class="int" maxlength="20">
+            </span>
+            <span class="error_next_box"></span>
+            </div>
+            <!-- PW1 -->
+            <div>
+            <h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
+            <span class="box int_pass">
+                <input type="text" name="pswd1" class="int" maxlength="20">
+                <span id="alertTxt">사용불가</span>
+            </span>
+            <span class="error_next_box"></span>
+            </div>
+
+            <!-- PW2 
+            <div>
+            <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
+            <span class="box int_pass_check">
+                <input type="text" name="pswd2" class="int" maxlength="20">
+            </span>
+            <span class="error_next_box"></span>
+            </div>
+            -->
+
+            <!-- NAME -->
+            <div>
+            <h3 class="join_title"><label for="name">이름</label></h3>
+            <span class="box int_name">
+                <input type="text" name="name" class="int" maxlength="20">
+            </span>
+            <span class="error_next_box"></span>
+            </div>
+
+            <!-- EMAIL -->
+            <div>
+            <h3 class="join_title"><label for="email">본인확인 이메일<span class="optional">(선택)</span></label></h3>
+            <span class="box int_email">
+                <input type="text" name="email" class="int" maxlength="100" placeholder="선택입력">
+            </span>
+            <span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>
+            </div>
+
+            <!-- MOBILE -->
+            <div>
+            <h3 class="join_title"><label for="phoneNo">휴대전화</label></h3>
+            <span class="box int_mobile">
+                <input type="tel" name="mobile" class="int" maxlength="16" placeholder="전화번호 입력">
+            </span>
+            <span class="error_next_box"></span>
+            </div>
+
+            <!-- JOIN BTN-->
+            <div class="btn_area">
+                <input type="submit" value="가입하기">
+            </div>
+
+        </div>
+        <!-- content-->
+        </div>
+        <!-- wrapper -->
+    </form>
+    <script src="main.js"></script>
+  </body>
+</html>
