@@ -1,0 +1,17 @@
+header{
+  height:75px;
+  background-color: #006F84;
+  border: 1px solid #253342;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  top: 0;
+  left:0;
+}
+h1{
+  color: white;
+  line-height: 75px;
+}
+.menu{}
+.menu li{}
+.menu a{line-height: 75px; color: white; padding:0 15px; display:block;}
