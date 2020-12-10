@@ -1,25 +1,10 @@
 <!-- header -->
 <header id="fixed-bar">
       <div class="logo">
-        <a href="/">
-          <?php
-
-          $name="/data/logo.png";
-          $fp=fopen($name,'rb');
-          header("Content-Type: image/png");
-          header("Content-Length: " . filesize($name));
-          fpassthru($fp);
-          exit;
-            // $file="/data/logo.png";
-            // header("Content-type:image/png");
-            // header("Content-Disposition:inline;filename=".basename($file)."");
-            // header("Content-length:".filesize($file));
-            // $filesize=filesize();
-            // readfile($file);
-            // $image = file_get_contents($file);
-            // echo $imgae;
-            // echo "<img src='/data/logo.PNG' alt='logo'/>";
-          ?>
+        <a href="C:/Bitnami/wampstack-8.0.0-0/apache2/htdocs/project/main-home.php.">
+        <?php
+        echo "<img src='assets/images/logo.png'/>";
+        ?>
         </a>
       </div>
       <div class="searchingbox">
