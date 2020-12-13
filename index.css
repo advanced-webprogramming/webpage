@@ -1,0 +1,84 @@
+#center{
+  text-align:center;
+  padding-top: 50px;
+}
+
+#main {
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #bde0b6;
+  text-align: center;
+  width: 500px;
+  height: 800px;
+}
+
+#chat {
+  height: 90%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.connect {
+  width: 50%;
+  margin: auto;
+  border-radius: 5px;
+  background-color: #f0cf92;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 5px;
+}
+
+.disconnect {
+  width: 50%;
+  margin: auto;
+  border-radius: 5px;
+  background-color: rgb(238, 162, 162);
+  text-align: center;
+  margin-top: 10px;
+  font-size:5px;
+}
+
+.me {
+  position: relative;
+  width: 80%;
+  height: 20px;
+  margin: 20px;
+  background: lemonchiffon;
+  border-radius: 10px;
+  margin-top: 5px;
+  font-size: 10px;
+}
+.me:after {
+  border-top:7px solid lemonchiffon;
+  border-left: 70px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 0px solid transparent;
+  content:"";
+  position:absolute;
+  top:10px;
+  right:-15px;
+  font-size: 10px;
+ }
+
+.other {
+  position: relative;
+  width: 80%;
+  height: 20px;
+  margin: 20px;
+  background: rgb(176, 175, 247);
+  border-radius: 10px;
+  margin-top: 5px;
+  font-size: 10px;
+}
+.other:after {
+  border-top:9px solid rgb(176, 175, 247);
+  border-left: 23px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 0px solid transparent;
+  content:"";
+  position:absolute;
+  top:10px;
+  left:-15px;
+  font-size: 10px;
+ }
