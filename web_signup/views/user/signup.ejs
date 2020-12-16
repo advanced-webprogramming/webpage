@@ -2,27 +2,28 @@
 <html lnag="ko">
   <head>
     <meta charset="UTF-8">
-    <title>회원가입</title>
-    <link rel="stylesheet" href="new_main.css">
-  </head>
-  <body>
-    <form action="/user/sign_up" method="post">
-        <!-- header -->
-        <div id="header">
-        <a href="웹주소" target="_blank"><img src="limeorange.jpg" id="logo"></a>
-        </div>
-        <!-- wrapper -->
-        <div id="wrapper">
-        <!-- content-->
-        <div id="content">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Jua&family=Nanum+Gothic:wght@700&family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/stylesheets/sign_up.css" type="text/css">
 
-            <!-- ID -->
-            <div>
-            <h3 class="join_title"><label for="id">아이디</label></h3>
-            <span class="box int_id">
-                <input type="text" name="userId" class="int" maxlength="20">
-            </span>
-            <span class="error_next_box"></span>
+    <title>회원가입</title>
+  </head>
+  <body><section>
+    <form action="/user/sign_up" method="post">
+      <div class="signup-card">
+        <div class="card-body">
+          <div class="brand-wrapper">
+            <a href = "/public/sss.html"></a>
+            <img src="/public/logo.png" alt='logo' class="logo">
+          </div>
+          <div id="content">
+            <div class='id'>
+              <h3 class="join_title"><label for="id">아이디</label></h3>
+              <input type="text" name="userId" class="int" maxlength="20">
+              <span class="error_next_box"></span>
             </div>
             <!-- PW1 -->
             <div>
@@ -34,17 +35,6 @@
             <span class="error_next_box"></span>
             </div>
 
-            <!-- PW2 
-            <div>
-            <h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
-            <span class="box int_pass_check">
-                <input type="text" name="pswd2" class="int" maxlength="20">
-            </span>
-            <span class="error_next_box"></span>
-            </div>
-            -->
-
-            <!-- NAME -->
             <div>
             <h3 class="join_title"><label for="name">이름</label></h3>
             <span class="box int_name">
@@ -73,14 +63,17 @@
 
             <!-- JOIN BTN-->
             <div class="btn_area">
-                <input type="submit" value="가입하기">
+                <input type="submit" value="Join" class=btnJoin>
             </div>
-
+          </div>
         </div>
-        <!-- content-->
-        </div>
-        <!-- wrapper -->
-    </form>
-    <script src="main.js"></script>
+      </div>
+    </form></section>
+    <footer>
+      <span class="lime">라임</span><span class="orange">오렌지</span><br>
+      이용약관 개인정보처리방침 책임의 한계와 법적고지 회원정보 고객센터<br>
+      <span class="copyright">Copyright LimeOrange Corp. All Rights Reserved.</span>
+    </footer>
+    <script src="/public/main.js"></script>
   </body>
 </html>
