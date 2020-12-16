@@ -1,0 +1,101 @@
+:root {
+  /*color*/
+  --white-color: #fff;
+  --black-color: #140a00;
+  --green-color: #5C6D47;
+  --dark-green-color: #2f3a2c;
+  --orange-color: #E99420;
+
+  /* size */
+  --padding: 12px;
+
+  /* font size */
+  --font-XL: 40px;
+  --font-L: 30px;
+  --font-M: 25px;
+  --font-S: 18px;
+  --font-micro: 12px;
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Do Hyeon', sans-serif;
+  padding-top: 100px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a :hover {
+  text-decoration: none !important;
+}
+
+/* content */
+
+#board_read {
+  width: 900px;
+  position: relative;
+  word-break: break-all;
+}
+
+#user_info {
+  font-size: var(--font-micro);
+}
+
+#user_info ul li {
+  float: left;
+  margin-left: 10px;
+}
+
+#bo_line {
+  width: 880px;
+  height: 2px;
+  background: var(--dark-green-color);
+  margin-top: 20px;
+}
+
+#bo_content {
+  margin-top: 20px;
+  font-size: var(--font-S);
+}
+
+#bo_ser {
+  font-size: var(--font-S);
+  color: var(--black-color);
+  position: absolute;
+  right: 0;
+}
+
+#bo_ser>ul>li {
+  float: left;
+  margin-left: 10px;
+  list-style: none;
+}
+
+/* 미디어쿼리 */
+@media screen and (max-width:800px) {
+  #board_read {
+    width: max-content;
+  }
+
+  #bo_ser {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: -webkit-flex;
+    -webkit-align-item: center;
+    -webkit-justify-content: center;
+
+  }

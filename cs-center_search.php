@@ -10,9 +10,16 @@
 </head>
 
 <body>
+<?php
+    $connect = mysqli_connect('localhost', 'root', "password", 'lime_orange') or die ("connect fail");
+    $query ="select * from question_list order by number desc";
+    $result = $connect->query($query);
+    $total = mysqli_num_rows($result);
+    $catagory = $_GET['catgo'];
+    $search_con = $_GET['search'];
+      ?>
   <!-- header -->
   <?php include_once "./fragment/header.php";?>
-
 
   <div class="cs_header">
     <div id="title">
@@ -27,7 +34,7 @@
           <option value="name">글쓴이</option>
           <option value="content">내용</option>
         </select>
-        <input type="text" id="container-search" placeholder="검색을 통해 쉽게 찾아보세요"/>
+        <input type="text" id="container-search" placeholder="<?php echo $search_con; ?>"/>
       <button id="header-search-button">
         <i class="fas fa-search"></i>
       </button>
@@ -37,16 +44,9 @@
   </div> 
 
   <br /><br/>
-  <?php
-          $connect = mysqli_connect('localhost', 'root', "password", 'lime_orange') or die ("connect fail");
-          $query ="select * from question_list order by number desc";
-          $result = $connect->query($query);
-          $total = mysqli_num_rows($result);
-      ?>
   <div class=write_button>
     <button onClick="location.href='./cs-center_write.php'">글쓰기</button>
   </div>
-  <!-- 질문리스트 -->
   <div class="content">
     <table class="table table-hover table-striped text-center" style="border: lpx solid">
       <thead>
@@ -58,9 +58,9 @@
           <td width="50">조회수</td>
         </tr>
       </thead>
-
       <tbody>
         <?php
+              $query2 ="select * from question_list where $catagory like '%$search_con%' order by number desc";
               while($rows = mysqli_fetch_assoc($result)){ //DB에 저장된 데이터 수 (열 기준)
                   if($total%2==0){
             ?> <tr class="even">

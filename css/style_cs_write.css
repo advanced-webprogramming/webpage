@@ -1,0 +1,123 @@
+:root {
+  /*color*/
+  --white-color: #fff;
+  --black-color: #140a00;
+  --green-color: #5C6D47;
+  --dark-green-color: #2f3a2c;
+  --orange-color: #E99420;
+
+  /* size */
+  --padding: 12px;
+
+  /* font size */
+  --font-XL: 40px;
+  --font-L: 30px;
+  --font-M: 25px;
+  --font-S: 18px;
+  --font-micro: 12px;
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Do Hyeon', sans-serif;
+  padding-top: 100px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a :hover {
+  text-decoration: none !important;
+}
+
+/* header는 header.css */
+/* 글쓰기 */
+
+textarea:focus {
+  outline: none;
+}
+
+#board_write {
+  width: 900px;
+  position: relative;
+  margin: 0 auto;
+}
+
+#write_area {
+  margin-top: 70px;
+  font-size: 14px;
+}
+
+#in_name {
+  margin-top: 30px;
+}
+
+#in_name textarea {
+  font-weight: bold;
+  font-size: 26px;
+  color: #333;
+  width: 900px;
+  border: none;
+  resize: none;
+}
+
+#in_title {
+  margin-top: 30px;
+}
+
+#in_title textarea {
+  font-weight: bold;
+  font-size: 26px;
+  color: #333;
+  width: 900px;
+  border: none;
+  resize: none;
+}
+
+.wi_line {
+  border: solid 1px lightgray;
+  margin-top: 10px;
+}
+
+#in_content {
+  margin-top: 10px;
+}
+
+#in_content textarea {
+  font: 14px;
+  color: #333;
+  width: 900px;
+  height: 400px;
+  resize: none;
+}
+
+#in_pw input {
+  font: 14px;
+  margin-top: 10px;
+}
+
+.bt_se {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.bt_se button {
+  width: 100px;
+  height: 30px;
+  font-size: var(--font-S);
+  border: none;
+  color: var(--dark-green-color);
+  background-color: var(--white-color);
+  border-radius: 10px;
+}
+
+.bt_se button:hover {
+  border-color: var(--green-color);
+}

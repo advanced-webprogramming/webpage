@@ -1,0 +1,99 @@
+/* header */
+header {
+  background-color: var(--white-color);
+  display: flex;
+  justify-content: flex-start;
+  padding: 17px 0 10px 16px;
+  position: fixed;
+  top: 0;
+  /* width: 100% */
+  left: 0;
+  right: 0;
+}
+
+header .logo img {
+  width: 13rem;
+  margin-top: 6px;
+  margin-right: 25px;
+}
+
+header .searchingbox {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  height: 2.5rem;
+  width: 38vw;
+  max-width: 400px;
+  border: 1px solid var(--orange-color);
+}
+
+header .searchingbox input {
+  font-size: var(--font-S);
+  width: 23.75rem;
+  padding: 10px;
+  border: 0px;
+  background-color: var(--white-color);
+}
+
+header .searchingbox input:focus {
+  outline: none;
+}
+
+header .searchingbox button {
+  width: 50px;
+  outline: none;
+  float: left;
+  border: 0px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+}
+
+header .searchingbox button {
+  color: var(--green-color);
+  border: 0px;
+}
+
+header .web_or_app {
+  position: absolute;
+  right: 50px;
+  display: flex;
+  margin-top: 12px;
+
+}
+
+header .web_or_app a {
+  color: var(--green-color);
+  font-size: var(--font-micro);
+}
+
+header .web_or_app #apple {
+  margin-right: 50px;
+}
+
+header .web_or_app i {
+  font-size: var(--font-L);
+}
+
+/* 미디어쿼리 */
+@media screen and (max-width:800px) {
+
+  header .logo {
+    display: flex;
+    left: 1px;
+  }
+
+  header .searchingbox {
+    width: 300px;
+  }
+
+  header .searchingbox ::placeholder {
+    color: white;
+  }
+
+  header .web_or_app {
+
+    display: none;
+  }
+
+}

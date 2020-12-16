@@ -3,6 +3,7 @@
   <head>
   <?php include_once "./fragment/head.php";?>
     <link href="css/style_main-home.css" rel="stylesheet" />
+    <link href="css/header.css" rel="stylesheet" />
     <script src="main.js"></script>
     <title> 라임오렌지</title>
   </head>
