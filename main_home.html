@@ -2,45 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
+      <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet" />
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="style.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap"
-      rel="stylesheet"
-    />
-
-    <title>오렌지 라임</title>
     <script src="main.js"></script>
+    <title> 라임오렌지</title>
   </head>
+
   <body>
-    <!-- header -->
     <header id="fixed-bar">
       <div class="logo">
-        <a href="/">
-          <img src="/data/logo.PNG  " atl="logo" />
+        <a href="C:/Bitnami/wampstack-8.0.0-0/apache2/htdocs/project/main-home.php.">
+        <img src='logo.png'>
         </a>
       </div>
       <div class="searchingbox">
         <input
           type="text"
           id="header-search-input"
-          placeholder="지역 이름, 물품명 등을 검색해보세요!"
-        />
+          placeholder="지역 이름, 물품명 등을 검색해보세요!">
         <button id="header-search-button">
           <i class="fas fa-search"></i>
         </button>
       </div>
 
       <div class="web_or_app">
-        <a
-          target="_blank"
+        <a target="_blank"
           href="https://www.apple.com/kr/app-store/"
-          id="apple"
-        >
+          id="apple">
           <i class="fab fa-apple"></i>
           <div class="fixed-download-text">App Store</div>
         </a>
@@ -50,52 +43,39 @@
         </a>
       </div>
     </header>
-
     <!-- 메인화면 -->
     <section class="home-main">
       <div id="home-main-top">
         <!-- <object type="image/svg+xml" data="data/park.svg" class="back-image"></object> -->
-        <h1>이웃들과 함께<br />아낌없이 주는<br />라임 오렌지 마켓</h1>
+        <div>이웃들과 함께<br><br>아낌없이 주는<br><br>라임 오렌지 마켓<div>
       </div>
     </section>
 
     <!-- 페이지 기능 설명 -->
-    <section class="service">
-      <div class="direct_translate">
-        <h1>가까운 이웃과 <br />간편하게 빠르게</h1>
-        <img src="/data/Chat.jpg" alt="Chat" />
-      </div>
-      <div class="search-term-list">
-        <h1>주간 인기 검색어를 한눈에</h1>
-      </div>
-      <div class="search-filter">
-        <h1>당신의 취향에 맞춘 <br />검색 결과</h1>
+    <section class="service" id="direct_translate">
+      <div>
+        <h1>가까운 이웃과 <br>간편하게 빠르게</h1>
+        <div class="t1">우리 동네의 다양한 이야기를 이웃과 함께 나누어요.<div>
+        <img src="Chat.jpg" alt="Chat">
       </div>
     </section>
+    <section class="service" id="search-term-list">
+      <h1>주간 인기 검색어를 한눈에</h1>
+    </section>
+    <section class="service" id="search-filter">
+      <h1>당신의 취향에 맞춘 <br />검색 결과</h1>
+    </section>
+    <div class=input_button>
+      <a href="http://localhost:4000/user/login">로그인 하러가기</a>
+      <a href="http://localhost:4000/user/sign_up">회원가입 하러가기</a>
+    </div>
+
     <!-- footer -->
-    <footer id="footer">
-      <div class="footer-top">
-        <h2>라임 오렌지</h2>
-        <ul class="footer-list">
-          <li>회사 소개</li>
-          <li>광고주센터</li>
-        </ul>
-        <ul class="footer-list-policy">
-          <li>이용약관</li>
-          <li>개인정보처리방침</li>
-        </ul>
-      </div>
-      <div class="footer-bottom">
-        <div id="cotyright">
-          <ul class="copyright-list">
-            <li>
-              "고객문의"
-              <a href="/">라임오렌지 cs센터</a>
-            </li>
-            <li>체휴문의</li>
-          </ul>
-        </div>
-      </div>
+    <footer><div class= 'footer_logo'>
+      <span class="lime">라임</span><span class="orange"> 오렌지</span><br><br><br></div>
+      <div class='footer_f'>
+        <br>이용약관 | 개인정보처리방침 | 책임의 한계와 법적고지 | 회원정보 | 고객센터<br>
+      <span class="copyright">Copyright LimeOrange Corp. All Rights Reserved.</span></div>
     </footer>
   </body>
 </html>
