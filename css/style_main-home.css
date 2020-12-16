@@ -17,6 +17,10 @@
   --font-micro: 12px;
 
 }
+hr{
+  align:center;
+  width:300px;
+}
 
 * {
   padding: 0;
@@ -36,7 +40,9 @@ a {
 a :hover {
   text-decoration: none !important;
 }
-
+.input_button{
+  text-align:center;
+}
 /* header */
 header {
   background-color: var(--white-color);
@@ -69,7 +75,7 @@ header .searchingbox {
 
 header .searchingbox input {
   font-size: var(--font-S);
-  width: 23.75rem;
+  width: 25.75rem;
   padding: 10px;
   border: 0px;
   background-color: var(--white-color);
@@ -117,28 +123,45 @@ header .web_or_app i {
 /* 메인화면 */
 #home-main-top {
   background-color: #faf4ea;
-  font-size: var(--font-L);
+  font-size: var(--font-XL);
   color: var(--dark-green-color);
   height: 550px;
-  padding-top: 20px;
+  padding-top: 100px;
   text-align: center;
 }
 
+#home-main-top .quote{
+  font-family:'Do Hyeon', sans-serif;
+  font-size:70px;
+}
+#search-term-list{
+  background-color:#d0e3b8;
+  height: 550px;
+  padding-top: 50px;
+  text-align: center;
+}
+.home_main div{
+  margin-top:100px;
+}
 /* 페이지 기능 설명 */
 .service {
   background-color: var(--white-color);
   height: 550px;
 }
+.t1{
+  font-family:"나눔 고딕";
+  margin: 10px 0 0 200px;
+}
 
 .service h1 {
-  margin: 200px 0 0 100px;
+  margin: 200px 100px 0 200px;
   font-size: var(--font-XL);
 }
 
 #direct_translate img {
   width: 500px;
   position: relative;
-  left: 700px;
+  left: 600px;
   top: -250px;
 }
 
@@ -150,21 +173,49 @@ header .web_or_app i {
   text-decoration: none;
   padding: 1.45rem 2.6rem;
   display: inline-block;
+  margin:100px;
+}
+
+.input_button a {
+  background-color: #ffe3bc;
+  color:#E99420;
+  font-size:20px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  padding: 1.45rem 4.6rem;
+  display: inline-block;
+  margin-bottom:100px;
+  width:250px;
+  height:50px;
 
 }
 
+.lime{
+  font-size:20px;
+  font-family: 'Jua', sans-serif;
+  color:#5C6D47;
+}
+.orange{
+  font-size:20px;
+  font-family: 'Jua', sans-serif;
+  color:#E99420;
+}
 
 /* footer */
 footer {
-  background-color: #495057;
-  color: #fff;
-  padding: 8rem 0;
+  background-color:#e8e8e8;
+  color:#383838;
+  padding: 4rem 0;
+  text-align:center;
 }
 
-footer .footer-top {
+/* footer .footer-top {
   display: flex;
   justify-content: space-between;
   margin-bottom: 4rem;
+  text-align:center;
+  margin-left:100px;
 }
 
 footer .footer-top .footer-list {
@@ -172,6 +223,7 @@ footer .footer-top .footer-list {
   display: block;
   font-size: 1.6rem;
   margin-bottom: 1.6rem;
+  text-align:center;
 }
 
 footer .footer-bottom {
@@ -184,7 +236,7 @@ footer .footer-bottom {
 footer .footer-bottom #cotyright {
   color: #ADB5BD;
   margin-top: 3.2rem;
-}
+} */
 
 /* 미디어쿼리 */
 @media screen and (max-width:800px) {
