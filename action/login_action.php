@@ -2,7 +2,7 @@
     $id= $_POST['id'];
     $password =password_hash( $_POST['password'],PASSWORD_DEFAULT); 
     $con = mysqli_connect("localhost", "root", "password", "lime_orange") or die("fail");
-    $query = "SELECT * FROM member WHERE id='$id'";
+    $query = "SELECT * FROM user WHERE usrId='$id'";
     $result = mysqli_query($con, $query);
 
     $num_match = mysqli_num_rows($result);
@@ -16,7 +16,7 @@
           ");
     } else {
         $row = mysqli_fetch_array($result);
-        $db_pass = $row['pw'];
+        $db_pass = $row['password'];
         mysqli_close($con);
 
         if(!password_verify($password, $db_pass)){
