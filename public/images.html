@@ -1,0 +1,186 @@
+<label for="avatar">Choose a profile picture:</label>
+
+<input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+
+<input type="button" onclick="upfile()" value="업로드 Upalod" />
+
+ 
+
+<div id="myimg">
+
+</div>
+
+ 
+
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-storage.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+
+ 
+
+<script>
+
+  // Your web apps Firebase configuration
+  var firebaseConfig = {
+    apiKey: "****************",
+    authDomain: "****************",
+    databaseURL: "****************",
+    projectId: "firstproject-519f1",
+    storageBucket: "****************",
+    messagingSenderId: "****************",
+    appId: "1:372493802587:web:363f029f54e5885b54737e",
+    measurementId: "****************"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  function upfile() {
+
+      // Create a root reference
+
+      var storageRef = firebase.storage().ref("/images");
+
+ 
+
+      var file = document.getElementById("avatar").files[0];
+
+ 
+
+      // Create the file metadata
+
+      var metadata = {
+
+        contentType: 'image/jpeg'
+
+      };
+
+      
+
+      // Upload file and metadata to the object 'images/mountains.jpg'
+
+      //var uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
+
+      var uploadTask = storageRef.child(file.name).put(file, metadata);
+
+      
+
+      // Listen for state changes, errors, and completion of the upload.
+
+      uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
+
+        function(snapshot) {
+
+          // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+
+          var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+
+          console.log('Upload is ' + progress + '% done');
+
+          switch (snapshot.state) {
+
+            case firebase.storage.TaskState.PAUSED: // or 'paused'
+
+              console.log('Upload is paused');
+
+              break;
+
+            case firebase.storage.TaskState.RUNNING: // or 'running'
+
+              console.log('Upload is running');
+
+              break;
+
+          }
+
+        }, function(error) {
+
+      
+
+        // A full list of error codes is available at
+
+        // https://firebase.google.com/docs/storage/web/handle-errors
+
+        switch (error.code) {
+
+          case 'storage/unauthorized':
+
+            // User doesn''t have permission to access the object
+
+            break;
+
+ 
+
+          case 'storage/canceled':
+
+            // User canceled the upload
+
+            break;
+
+      
+
+          case 'storage/unknown':
+
+            // Unknown error occurred, inspect error.serverResponse
+
+            break;
+
+ 
+
+          default:
+
+            // Unknown error occurred, inspect error.serverResponse
+
+            alert("upload error");
+
+            break;
+
+        }
+
+      }, function() {
+
+          // Upload completed successfully, now we can get the download URL
+
+          uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+
+          //console.log('File available at', downloadURL);
+
+          var elem = document.createElement("img");
+
+          elem.setAttribute("src", downloadURL);
+
+          elem.setAttribute("height", "100");
+
+          elem.setAttribute("width", "100");
+
+          document.getElementById("myimg").appendChild(elem);
+
+        });
+
+      });
+
+  }
+
+ 
+
+ 
+rules_version = '2';
+
+service firebase.storage {
+
+  match /b/{bucket}/o {
+
+    match /{allPaths=**} {
+
+      //allow read, write: if request.auth != null;
+
+      allow read, write: if  true;
+
+    }
+
+  }
+
+}
