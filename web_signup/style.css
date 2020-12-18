@@ -161,7 +161,7 @@ header .web_or_app i {
 #direct_translate img {
   width: 500px;
   position: relative;
-  left: 600px;
+  left: 900px;
   top: -250px;
 }
 
@@ -190,6 +190,7 @@ header .web_or_app i {
   height:50px;
 
 }
+
 
 .lime{
   font-size:20px;
