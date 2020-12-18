@@ -32,45 +32,18 @@ body {
 
 /* header는 header.css */
 /* table*/
-
-table {
-  border-top: 1px solid var(--dark-green-color);
-  border-collapse: collapse;
-  margin: 0 auto 0 auto;
-}
-
-tr {
-  border-bottom: 1px solid var(--dark-green-color);
-  padding: 10px;
-}
-
-td {
-  border-bottom: 1px solid var(--white-color);
-  text-align: center;
-  padding: 10px;
-}
-
-table .even {
-  background: var(--white-color);
-}
-
-.text {
-  text-align: center;
-  padding-top: 20px;
-  color: var(--black-color);
-}
-
-.text:hover {
-  text-decoration: underline;
+a {
+  color: var(--green-color) !important;
 }
 
 a:link {
-  color: var(--green-color);
+  color: var(--green-color) !important;
   text-decoration: none;
 }
 
 a:visited {
-  text-decoration: none;
+  color: var(--green-color);
+  text-decoration: var(--green-color);
 }
 
 a:hover {
@@ -85,7 +58,6 @@ a:hover {
 }
 
 .cs_header #title {
-  color: var(--black-color);
   margin: 0 80px 0 30px;
 }
 
@@ -96,7 +68,7 @@ h2 {
   justify-content: space-between;
 }
 
-.cs_header #title h1 {
+#title h1 {
   font-size: var(--font-XL);
   color: var(--green-color);
 }
@@ -112,9 +84,6 @@ select {
   border: none;
   border-right: 1px solid #999;
   border-radius: 0px;
-  /* -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; */
 }
 
 .cs_header .searchingbox {
@@ -183,6 +152,38 @@ select {
 .login-write_button button :hover {
   color: var(--white-color);
   background-color: var(--green-color);
+}
+
+table {
+  border-top: 1px solid var(--dark-green-color);
+  border-collapse: collapse;
+  margin: 0 auto 0 auto;
+  width: 900px
+}
+
+tr {
+  border-bottom: 1px solid var(--dark-green-color);
+  padding: 10px;
+}
+
+td {
+  border-bottom: 1px solid var(--white-color);
+  text-align: center;
+  padding: 10px;
+}
+
+table .even {
+  background: var(--white-color);
+}
+
+.text {
+  text-align: center;
+  padding-top: 20px;
+  color: var(--black-color);
+}
+
+.text:hover {
+  text-decoration: underline;
 }
 
 @media screen and (max-width:800px) {

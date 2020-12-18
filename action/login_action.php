@@ -22,7 +22,7 @@
         if(!password_verify($password, $db_pass)){
             echo("
                   <script>
-                    window.alert('비밀번호가 틀립니다!$password,$db_pass')
+                    window.alert('비밀번호가 틀립니다!')
                     history.go(-1)
                   </script>
               ");

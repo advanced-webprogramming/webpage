@@ -60,6 +60,7 @@
   </div> 
 
   <br /><br/>
+  <div class='login-write_button'
   <?php
           $connect = mysqli_connect('localhost', 'root', "password", 'lime_orange') or die ("connect fail");
           $query ="select * from question_list order by number desc";
@@ -67,18 +68,15 @@
           $total = mysqli_num_rows($result);
           session_start();
           if(isset($_SESSION['id'])) {
-            echo $_SESSION['id'];?>님 안녕하세요
-          <br/>
+            ?> <div><button id='write' onClick="location.href='./cs-center_write.php'">글쓰기</button></div> 
   <?php
           }
           else {
-        ?>  <button onclick="location.href='./login.php'">로그인</button>
-          <br />
-        <?php }
-      ?>
-  <div class=write_button>
-    <button onClick="location.href='./cs-center_write.php'">글쓰기</button>
-  </div>
+            
+        ?>  <div><button id='login' onclick="location.href='../view/login.ejs'">로그인</button></div>
+
+        <?php } ?>
+    </div>
   <!-- 질문리스트 -->
   <div class="content">
     <table class="table table-hover table-striped text-center" style="border: lpx solid">

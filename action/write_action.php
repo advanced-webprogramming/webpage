@@ -26,7 +26,7 @@
         $mqq = mq("alter table board auto_increment =1");
         echo "<script>
         alert('글쓰기 완료되었습니다.');
-        location.href='./cs-center.php';</script>";
+        location.href='../view/cs-center.php';</script>";
 
     }else{
         echo "<script>
