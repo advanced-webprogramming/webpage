@@ -1,9 +1,9 @@
 <!-- header -->
 <header id="fixed-bar">
       <div class="logo">
-        <a href="C:/Bitnami/wampstack-8.0.0-0/apache2/htdocs/project/main-home.php.">
+        <a href="../view/main-home.php.">
         <?php
-        echo "<img src='assets/images/logo.png'/>";
+        echo "<img src='../assets/images/logo.png'/>";
         ?>
         </a>
       </div>

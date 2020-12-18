@@ -13,11 +13,17 @@
         global $connect;
         return $connect->query($sql);
       }
+      
+      if(isset($_POST['lockpost'])){
+        $lo_post = '1';
+      }else{
+        $lo_post = '0';
+      }
 
       if($id && $pw && $title && $content){
-        $sql = mq("INSERT INTO question_list (number,title, content, date, hit, id, pw) 
-        VALUES (null,'$title', '$content', '$date',0, '$id', '$pw')");
-  
+        $sql = mq("INSERT INTO question_list (number,title, content, date, hit, id, pw,lock_post) 
+        VALUES (null,'$title', '$content', '$date',0, '$id', '$pw','$lo_post')");
+        $mqq = mq("alter table board auto_increment =1");
         echo "<script>
         alert('글쓰기 완료되었습니다.');
         location.href='./cs-center.php';</script>";

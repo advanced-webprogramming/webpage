@@ -1,10 +1,9 @@
 <?php
-    $id   = $_POST['id'];
-    $pw = $_POST['pw']; 
-      
+    $id= $_POST['id'];
+    $password = $_POST['password']; 
     $con = mysqli_connect("localhost", "root", "password", "lime_orange") or die("fail");
-    $query = "SELECT * FROM user WHERE id='$id'";
-    $result = mysqli_query($con, $sql);
+    $query = "SELECT * FROM member WHERE id='$id'";
+    $result = mysqli_query($con, $query);
 
     $num_match = mysqli_num_rows($result);
 
@@ -20,7 +19,7 @@
         $db_pass = $row['pw'];
         mysqli_close($con);
 
-        if(!password_verify($pws, $db_pass)){
+        if(!password_verify($password, $db_pass)){
             echo("
                   <script>
                     window.alert('비밀번호가 틀립니다!')
@@ -34,7 +33,7 @@
             $_SESSION["username"] = $row["name"];        
             echo("
               <script>
-                location.href = 'main-home.php';
+                location.href = history.back();
               </script>
             ");
         }

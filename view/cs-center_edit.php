@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <title>라임오렌지 나의 질문</title>
-<?php include_once "./fragment/head.php";?>
-<link href="css/style_cs_write.css" rel="stylesheet" />
+<?php include_once "../fragment/head.php";?>
+<link href="../css/style_cs_write.css" rel="stylesheet" />
 </head>
 <body>
 <?php    
@@ -14,13 +14,22 @@ $connect = mysqli_connect("localhost","root" ,"password" ,"lime_orange" ) or die
 		$rows = mysqli_fetch_assoc($result);
 		$title = $rows['title'];
 		$content = $rows['content'];
-		$usrid = $rows['id'];
+		$id = $rows['id'];
+		$URL="./cs-center.php";
 		session_start();
+		if(!isset($_SESSION['id'])) {
+?>
+<script>
+				alert("권한이 없습니다.");
+				location.replace("<?php echo $URL?>");
+</script>
+<?php   }
+				else if($_SESSION['id']==$id) {
 ?>
 	<div class="container">
 		<h4>글을 수정합니다.</h4>
 			<div id="write_area">
-				<form action="edit_action.php?number=<?php echo $number; ?>" method="post">
+				<form action="../action/edit_action.php?number=<?php echo $number; ?>" method="post">
 					<div id="in_title">
 							<textarea name="title" id="utitle" rows="1" cols="55" placeholder="제목" maxlength="100" required><?php echo $rows['title']; ?></textarea>
 						</div>
@@ -41,5 +50,13 @@ $connect = mysqli_connect("localhost","root" ,"password" ,"lime_orange" ) or die
 				</form>
 			</div>
   </div>
+	<?php   }
+                else {
+	?><script>
+						alert("권한이 없습니다.");
+						location.replace("<?php echo $URL?>");
+		</script>
+        <?php   }
+        ?>
   </body>
 </html>

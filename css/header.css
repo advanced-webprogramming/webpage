@@ -22,7 +22,7 @@ header .searchingbox {
   display: flex;
   justify-content: space-between;
   border: none;
-  height: 2.5rem;
+  height: 35px;
   width: 38vw;
   max-width: 400px;
   border: 1px solid var(--orange-color);
@@ -30,7 +30,7 @@ header .searchingbox {
 
 header .searchingbox input {
   font-size: var(--font-S);
-  width: 23.75rem;
+  width: 35vw;
   padding: 10px;
   border: 0px;
   background-color: var(--white-color);
@@ -47,9 +47,6 @@ header .searchingbox button {
   border: 0px;
   background-color: var(--white-color);
   border-radius: 50%;
-}
-
-header .searchingbox button {
   color: var(--green-color);
   border: 0px;
 }

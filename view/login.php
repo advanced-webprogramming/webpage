@@ -17,7 +17,7 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="assets/css/login.css" />
+    <link rel="stylesheet" href="../assets/css/login.css" />
     
   </head>
   <body>
@@ -25,23 +25,19 @@
       <div class="container">
         <div class="card login-card">
           <div class="row no-gutters">
-            <div class="col-md-5">
-              <img
-                src="assets/images/chat.jpg"
-                alt="login"
-                class="login-card-img"
-              />
-            </div>
             <div class="col-md-7">
               <div class="card-body">
                 <div class="brand-wrapper">
-                  <img src="assets/images/logo.png" alt="logo" class="logo" />
+                <a href="../view/main-home.html">
+                <img src="../assets/images/logo.png" alt="logo" class="logo" />
+                </a>
+                  
                 </div>
                 <form
                   name="loginSbmt"
                   id="loginSbmt"
                   method="post"
-                  action="login_ok.php"
+                  action="../action/login_action.php"
                 >
                   <div class="form-group">
                     <label for="id" class="sr-only">ID</label>
@@ -67,9 +63,9 @@
                     name="login"
                     id="login"
                     class="btn btn-block login-btn mb-4"
-                    type="button"
+                    type="submit"
                     value="Login"
-                    onclick="check_input()"
+                    
                   />
                 </form>
                 <a href="#!" class="forgot-password-link">비밀번호 찾기</a>
@@ -92,6 +88,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <script src="./login.js"></script>
+    <script src="../action/login.js"></script>
   </body>
 </html>

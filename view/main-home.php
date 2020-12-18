@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <?php include_once "./fragment/head.php";?>
-    <link href="css/style_main-home.css" rel="stylesheet" />
-    <link href="css/header.css" rel="stylesheet" />
+  <?php include_once "../fragment/head.php";?>
+    <link href="../css/style_main-home.css" rel="stylesheet" />
+    <link href="../css/header.css" rel="stylesheet" />
     <script src="main.js"></script>
     <title> 라임오렌지</title>
   </head>
 
   <body>
-    <?php include_once "./fragment/header.php";?>
+    <?php include_once "../fragment/header.php";?>
 
     <!-- 메인화면 -->
     <section class="home-main">
@@ -26,7 +26,7 @@
         <a href="">인기 상품 보기</a>
       </div>
 
-      <img src="/data/Chat.jpg" alt="Chat" />
+      <img src="./data/Chat.jpg" alt="Chat" />
     </section>
     <section class="service" id="search-term-list">
       <h1>주간 인기 검색어를 한눈에</h1>
