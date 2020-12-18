@@ -3,23 +3,32 @@
   <head>
     <meta charset="utf-8">
     <title>채팅</title>
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="index.css">
     <script src="/socket.io/socket.io.js"></script>
-    <script src="/js/index.js"></script>
+    <script src="/index.js"></script>
   </head>
-  <body>
-    <header>
-      <p style="background-color: rgb(231, 173, 66); width: 10px;"></p>
-      <hr style="border: solid 4px olivedrab">
-      <br>
-  </header>
+  <body><main>
+    <div class="index">Chat</div>
+    <hr>
     <div id="main">
       <div id="chat">
+
       </div>
-      <div>
-        <input type="text" id="test" placeholder="메세지를 입력하세요:)">
+      <div class="chattingbox">
+        <input type="text" id="test" placeholder="메세지를 입력하세요:)">,
         <button onclick="send()">전송</button>
       </div>
-    </div>
+    </div></main>
+    <footer><div class= 'footer_logo'>
+      <span class="lime">라임</span><span class="orange"> 오렌지</span><br><br><br></div>
+      <div class='footer_f'>
+        <br>이용약관 | 개인정보처리방침 | 책임의 한계와 법적고지 | 회원정보 | 고객센터<br>
+        <span class="copyright">Copyright LimeOrange Corp. All Rights Reserved.</span></div>
+      </footer>
   </body>
 </html>
