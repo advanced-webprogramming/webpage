@@ -63,12 +63,12 @@
           $result = $connect->query($query);
           $total = mysqli_num_rows($result);
           session_start();
-          if(isset($_SESSION['id'])) {?>
-            <button id='write' onClick="location.href='./cs-center_write.php'">글쓰기</button>
+          if(isset($_SESSION['id'])) {
+            ?>  <button id='write' onClick="location.href='./cs-center_write.php'">글쓰기</button>
   <?php
           }
           else {
-        ?>  <button id='login' onclick="location.href='./login.php'">로그인</button>
+        ?>  <button id='login' onclick="location.href='../view/login.ejs'">로그인</button>
 
         <?php } ?>
   </div>

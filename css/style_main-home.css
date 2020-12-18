@@ -171,32 +171,4 @@ footer .footer-bottom {
 footer .footer-bottom #cotyright {
   color: #ADB5BD;
   margin-top: 3.2rem;
-<<<<<<< HEAD
 }
-=======
-} */
-
-/* 미디어쿼리 */
-@media screen and (max-width:800px) {
-
-  header .logo {
-    display: flex;
-    left: 1px;
-  }
-
-  header .searchingbox {
-    width: 300px;
-  }
-
-  header .searchingbox ::placeholder {
-    color: white;
-  }
-
-  header .web_or_app {
-
-    display: none;
-  }
-
-}
-
->>>>>>>5e1cdeed17c30d3e141c1c39d6b462cd006411d6

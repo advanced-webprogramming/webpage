@@ -29,13 +29,6 @@ body {
   padding-top: 100px;
 }
 
-a {
-  text-decoration: none;
-}
-
-a :hover {
-  text-decoration: none !important;
-}
 
 /* header는 header.css */
 /* table*/
