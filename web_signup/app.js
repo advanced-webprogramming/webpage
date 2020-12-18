@@ -5,6 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const models = require("./models/index.js");
 const session = require('express-session');
+var http = require('http');
+var static = require('serve-static');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -21,6 +24,7 @@ models.sequelize.sync().then( () => {
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+// var server = app.listen(4000,function(){console.log("Express server has started on port 4000")});
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -35,7 +39,12 @@ app.use(session({
     maxAge: 24000 * 60 * 60 // 쿠키 유효기간 24시간
   }
 }));
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/')));
+// app.use('/html', static(path.join(__dirname,'html')));
+http.createServer(app).listen(4000,function(){
+  console.log('express webserver start');
+})
 
 app.use('/', indexRouter);
 app.use('/user', usersRouter);

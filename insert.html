@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+      #center{
+        text-align:center;
+        padding-top: 50px;
+        font-size: 20px;
+        }
+      body{
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat";
+      }
+      .searchbox{
+        width: 90%;
+        margin: 10px auto;
+      }
+      .header{
+        background: #bde0b6;
+        overflow: hidden;
+        padding: 20px;
+        text-align: center;
+      }
+      .container{
+        background: #FFFFF5;
+        padding: 1%;
+      }
+      </style>
+</head>
+<body>
+	<div id="center">
+        <a href="/board"><img src="라임오렌지.png" height="60px"></a>
+  </div>
+   <div class="searchbox">
+      <div class="header">
+        매물 올리기
+      </div>
+      <div class="container">
+            <form method="post" action="upload" enctype="multipart/form-data">
+                <table width="100%">
+                    <tr>
+                        <td><label>제목</label></td>
+                        <td><input type="text" name="title" /></td>
+                    </tr>
+                    <tr>
+                        <td><label>사진</label></labe></td>
+                        <td>
+                          
+                          
+                          <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+                          <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
+                          <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-storage.js"></script>
+                          <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+                          <script>
+                            var firebaseConfig = {
+                              apiKey: "AIzaSyDfQz9GfUb98JPfCSBYxv6Qf_xaRI9frLg",
+                              authDomain: "firstproject-519f1.firebaseapp.com",
+                              projectId: "firstproject-519f1",
+                              storageBucket: "firstproject-519f1.appspot.com",
+                              messagingSenderId: "372493802587",
+                              appId: "1:372493802587:web:363f029f54e5885b54737e"
+                          
+                            };
+                            firebase.initializeApp(firebaseConfig);
+                            firebase.analytics();
+                            function upfile() {
+                                var storageRef = firebase.storage().ref("/images");
+                                var file = document.getElementById("picture").files[0];
+                                var metadata = {
+                                  contentType: 'image/jpeg'
+                                };
+                          
+                                var uploadTask = storageRef.child(file.name).put(file, metadata);
+                                uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, 
+                                  function(snapshot) {
+                                    var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                                    console.log('Upload is ' + progress + '% done');
+                          
+                                    switch (snapshot.state) {
+                                      case firebase.storage.TaskState.PAUSED:
+                                        console.log('Upload is paused');
+                                        break;
+                          
+                                      case firebase.storage.TaskState.RUNNING:
+                                        console.log('Upload is running');
+                                        break;
+                                    }
+                          
+                                  }, function(error) {
+                          
+                          
+                                  switch (error.code) {
+                                    case 'storage/unauthorized':
+                                    break;
+                          
+                                    case 'storage/canceled':
+                                      break;
+                          
+                                    case 'storage/unknown':
+                                      break;
+                          
+                                    default:
+                                      alert("upload error");
+                                      break;
+                                  }
+                          
+                                }, function() {
+                                    uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+                                    var elem = document.createElement("img");
+                                    elem.setAttribute("src", downloadURL);
+                                    elem.setAttribute("height", "100");
+                                    elem.setAttribute("width", "100");
+                                    document.getElementById("myimg").appendChild(elem);
+                                    alert(downloadURL);
+                                  });
+                                });      
+                            }
+                            </script>
+                                                     
+                            <label for="picture">alert창을 통해 뜨는 링크를 이미지링크에 복사, 붙여넣기해주세요!</label><br>
+                            <input type="file" id="picture" name="picture" accept="image/png, image/jpeg">  
+                            <input type="button" onclick="upfile()" value="업로드 Upalod" />  
+                            <div id="myimg">
+
+                            </div>
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>가격</label></td>
+                        <td><input type="text" name="price" /></td>
+                    </tr>
+                    <tr>
+                      <td><label>설명</label></td>
+                      <td>
+                        <input type="text" name="instruction" min="10" max="500" style="width: 400px; height: 100px;" /></td>
+                    </tr>
+                    <tr>
+                      <td><label>해시태그</label></td>
+                      <td><input type="text" name="hashtag" /></td>
+                    </tr>
+                    <tr>
+                      <td><label>이미지링크</label></td>
+                      <td><input type="url" name="image" /></td>
+                    </tr>
+                </table>
+                <input type="submit" onclick="upfile()" value="제출"/>
+            </form>
+          </span>
+        </div>
+          </span>
+        </div>
+      </div>
+    </div>
+    
+</body>
+</html>

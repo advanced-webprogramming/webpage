@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+      #center{
+        text-align:center;
+        padding-top: 50px;
+        font-size: 20px;
+        }
+      #right{
+        text-align: right;
+        background-color: rgb(223, 167, 63);
+      }
+      body{
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat";
+      }
+      .searchbox{
+        width: 90%;
+        margin: 10px auto;
+      }
+      .header{
+        background: #bde0b6;
+        overflow: hidden;
+        padding: 20px;
+        text-align: center;
+      }
+      .header h1{
+        text-transform: uppercase;
+        color: white;
+        margin: 0;
+        margin-bottom: 8px;
+      }
+      #value{
+        border: none;
+        background: #f0cf92;
+        padding: 6px;
+        font-size: 18px;
+        width: 80%;
+        border-radius: 6px;
+        color: white;
+      }
+      #value:focus{
+        outline: none;
+      }
+      .container{
+        background: #FFFFF5;
+        padding: 1%;
+      }
+      .item{
+        margin: 3% 0px;
+        display: flex;
+        align-items: center;
+      }
+      .icon{
+        width: 40px;
+        height: 25px;
+        background: #bde0b6;
+        color: white;
+        font-size: 15px;
+        text-align: center;
+        line-height: 25px;
+        border-radius: 500%;
+        margin-right: 8px;
+      }
+      .name{
+        font-size: 17px;
+        font-weight: 470;
+        color: #333;
+      }
+      a{
+        text-decoration: none;
+        color:black;
+      }
+      a > div{
+        font-size: 10px;
+      }
+      </style>
+    <script type="text/javascript">
+        function filter(){
+
+        var value, name, item, i;
+
+        value = document.getElementById("value").value.toUpperCase();
+        item = document.getElementsByClassName("item");
+
+        for(i=0;i<item.length;i++){
+            name = item[i].getElementsByClassName("name");
+            if(name[0].innerHTML.toUpperCase().indexOf(value) > -1){
+            item[i].style.display = "flex";
+            }else{
+            item[i].style.display = "none";
+            }
+        }
+        }
+        </script>
+</head>
+<body>
+  <div id="center">
+        <a href="/"><img src="라임오렌지.png" height="60px"></a>
+  </div>
+   <div class="searchbox">
+      <div class="header">
+        <a href="/board"><img scr="라임오렌지.png"></a>
+        <input onkeyup="filter()" type="text" id="value" placeholder="매물을 검색해보세요:)">
+      </div>
+      <div style="text-align: right">
+      <a href="/insert">매물 올리기</a>
+      </div>
+      <div class="container">
+		<table width="100%">
+      <td><h3>NEW 매물</h3></td>
+            <% data.forEach(function(item, index) { %>
+            <tr>
+				<td><a href="test2.html">
+          <img src="<%= item.image %>" width="200px" height="300px" vertical-align= "bottom"><br><%= item.title %><br><%=item.price %><br><%=item.hashtag %><br></a><a href="/edit/<%= item.id %>"><div>EDIT</div></a><a href="/delete/<%= item.id %>"><div>DELETE</div></a><br></td>
+      </tr>
+      <% }); %>
+    </table>
+     </div>
+        
+      <div class="container">
+
+        <div class="item">
+            <span class="name">
+                <table >
+                    <tr>
+                        <td><h3>HOT상품</h3></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="필라상의.html"><img src="필라상의.png" width="200px" height="300px"><br>필라반팔티 팔아요~<br>8,000원<br>#노란색</a>
+                          </a></td>
+                          <td>
+                            <a href="스커트하의.html"><img src="스커트하의.png" width="200px" height="300px"><br>예쁜 치마바지입니다!!<br>10,000원<br>#치마#스커트</a>
+                          </td>
+                          <td>
+                            <a href="입생로랑베이스.html"><img src="입생로랑베이스.png" width="200px" height="300px"><br>입생로랑 파데 20호 팝니다!<br>13,000원<br>#건성용#촉촉</a>
+                          </td>
+                    </tr>
+                </table>
+            </span>
+        </div>
+        
+        <h3>카테고리별 전체상품</h3>
+        <div class="item">
+          <span class="icon">상의</span>
+          <span class="name">
+            <table>
+              <tr>
+                <td>
+                  <a href="필라상의.html"><img src="필라상의.png" width="200px" height="300px"><br>필라반팔티 팔아요~<br>8,000원<br>#노란색</a>
+                </td>
+                <td>
+                  <td><a href="patagonia.html"><img src="파타고니아상의.png" width="200px" height="300px"><br>파타고니아 후드티!!<br>20,000원<br>#기모#검정색</a></td>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+
+        <div class="item">
+          <span class="icon">하의</span>
+          <span class="name">
+            <table>
+              <tr>
+                <td>
+                  <a href="와이드하의.html"><img src="와이드하의.png" width="200px" height="300px"><br>짱 편한 와이드 팬츠<br>5,000원<br>#바지#프리사이즈</a>
+                </td>
+                <td>
+                  <td><a href="카고하의.html"><img src="카고하의.png" width="200px" height="300px"><br>카고팬츠 팝니다<br>13,000원<br>#바지</a></td>
+                </td>
+                <td>
+                  <a href="스커트하의.html"><img src="스커트하의.png" width="200px" height="300px"><br>예쁜 치마바지입니다!!<br>10,000원<br>#치마#스커트</a>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+
+        <div class="item">
+          <span class="icon">립</span>
+          <span class="name">
+            <table>
+              <tr>
+                <td>
+                  <a href="이니스프리립.html"><img src="이니스프리립.png" width="200px" height="300px"><br>이니스프리 틴트밤<br>4,000원<br>#립#레드#오렌지</a>
+                </td>
+                <td>
+                  <td><a href="3ce립.html"><img src="3ce립.png" width="200px" height="300px"><br>3CE 벨벳 젠틀코랄<br>13,000원<br>#틴트</a></td>
+                </td>
+                <td>
+                  <a href="페리페라립.html"><img src="페리페라립.png" width="200px" height="300px"><br>페리페라 덕후몰이<br>6,000원<br>#착붙틴트#레드</a>
+                </td>
+                <td>
+                  <a href="맥립.html"><img src="맥립.png" width="200px" height="300px"><br>맥 루비우<br>30,000원<br>#립스틱#레드립스틱</a>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+
+        <div class="item">
+          <span class="icon">베이스</span>
+          <span class="name">
+            <table>
+              <tr>
+                <td>
+                  <a href="3ce베이스.html"><img src="3ce베이스.png" width="200px" height="300px"><br>3CE BB 21호~<br>10,000원<br>#쓰리씨이#비비크림</a>
+                </td>
+                <td>
+                  <a href="입생로랑베이스.html"><img src="입생로랑베이스.png" width="200px" height="300px"><br>입생로랑 파데 20호 팝니다!<br>13,000원<br>#건성용#촉촉</a>
+                </td>
+                <td>
+                  <a href="클리오베이스.html"><img src="클리오베이스.png" width="200px" height="300px"><br>클리오 스테이 퍼펙트 파운데이션 21호<br>10,000원<br>#국민파데</a>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+
+        <div class="item">
+          <span class="icon">냉장고</span>
+          <span class="name">
+            <table>
+              <tr>
+                <td>
+                  <a href="250리터냉장고.html"><img src="250리터냉장고.png" width="200px" height="300px"><br>250 리터냉장고<br>100,000원<br>#화이트</a>
+                </td>
+                <td>
+                  <a href="삼성패밀리허브냉장고.html"><img src="삼성패밀리허브냉장고.png" width="200px" height="300px"><br>삼성 패밀리 허브 냉장고<br>1,000,000원<br>#양문형#IOT</a>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+
+        <div class="item">
+          <span class="icon">청소기</span>
+          <span class="name">
+            <table>
+              <tr>
+                <td>
+                  <a href="LG청소기.html"><img src="LG청소기.png" width="200px" height="300px"><br>LG청소기 팝니다~<br>40,000원<br>#가벼움#레드</a>
+                </td>
+                <td>
+                  <a href="LG무선핸디청소기.html"><img src="LG무선핸디청소기.png" width="200px" height="300px"><br>LG 무선 핸디청소기<br>90,000원<br>#간편#레드</a>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+
+        <div class="item">
+          <span class="icon">에어프라이기</span>
+          <span class="name">
+            <table>
+              <tr>
+                <td>
+                  <a href="라팔에어프라이어7리터.html"><img src="라팔에어프라이어7리터.png" width="200px" height="300px"><br>라팔 에어프라이어 7리터<br>60,000원<br>#대용량</a>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+
+        <div class="item">
+          <span class="icon">에세이</span>
+          <span class="name">
+            <table>
+              <tr>
+                <td>
+                  <a href="에세이5권.html"><img src="에세이5권.png" width="200px" height="300px"><br>에세이 5권 무나합니다!<br>0원<br>#개별구매가능#책</a>
+                </td>
+                <td>
+                  <a href="버티는삶에관하여에세이.html"><img src="버티는삶에관하여에세이.png" width="200px" height="300px"><br>버티는 삶에 관하여<br>5,000원<br>#책</a>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+
+        <div class="item">
+          <span class="icon">소설</span>
+          <span class="name">
+            <table>
+              <tr>
+                <td>
+                  <a href="묶음소설.html"><img src="묶음소설.png" width="200px" height="300px"><br>소설책 많아요~<br>3,000원<br>#개별구매가능#책</a>
+                </td>
+                <td>
+                  <a href="곰탕소설.html"><img src="곰탕소설.png" width="200px" height="300px"><br>곰탕(소설입니당)<br>4,500원<br>#책#재밌음</a>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+
+        <div class="item">
+          <span class="icon">쇼파</span>
+          <span class="name">
+            <table>
+              <tr>
+                <td>
+                  <a href="갈색쇼파.html"><img src="갈색쇼파.png" width="200px" height="300px"><br>갈색쇼파<br>50,000원<br>#대형사이즈#거실용</a>
+                </td>
+                <td>
+                  <a href="중고쇼파.html"><img src="중고쇼파.png" width="200px" height="300px"><br>3년된 쇼파입니다^^<br>60,000원<br>#대형쇼파</a>
+                </td>
+                <td>
+                  <a href="파란쇼파.html"><img src="파란쇼파.png" width="200px" height="300px"><br>환한 파란쇼파<br>55,000원<br>#코발트블루#3인용</a>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+
+        <div class="item">
+          <span class="icon">침대</span>
+          <span class="name">
+            <table>
+              <tr>
+                <td>
+                  <a href="가로침대.html"><img src="가로침대.png" width="200px" height="300px"><br>침대 팝니다^^<br>50,000원<br>#더블침대#깨끗</a>
+                </td>
+                <td>
+                  <a href="하얀침대.html"><img src="하얀침대.png" width="200px" height="300px"><br>더블사이즈 침대<br>40,000원<br>#매트리스포함가</a>
+                </td>
+              </tr>
+            </table>
+          </span>
+        </div>
+
+        <div class="item">
+          <span class="icon">기타</span>
+          <span class="name">
+            <table>
+              <tr>
+                <td>
+                  <% data.forEach(function(item, index) { %>
+                    <tr>
+                <td><a href="test2.html">
+                  <img src="<%= item.image %>" width="200px" height="300px" vertical-align= "bottom"><br><%= item.title %><br><%=item.price %><br><%=item.hashtag %><br></a><a href="/edit/<%= item.id %>"><div>EDIT</div></a><a href="/delete/<%= item.id %>"><div>DELETE</div></a><br></td>
+              </tr>
+              <% }); %>
+            </table>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
